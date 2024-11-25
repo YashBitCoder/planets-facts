@@ -1,0 +1,483 @@
+:root {
+    --before-color: initial;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070724;
+    user-select: none;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; 
+    color: white;
+    font-family: "Antonio", serif;
+}
+
+.scrolling-bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    background-image: url("assets/bg-stars.svg");
+    background-repeat: repeat-x;
+    animation: slide 10s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+.base-modal {
+    margin-top: 5rem;
+    text-align: center;
+    text-transform: capitalize;  
+}
+
+.base-modal h1 {
+    margin-bottom: 1rem;
+    font-size: 5.5rem;
+}
+
+.base-modal h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.explore-btn {
+    margin-top: 1.4rem;
+    font-family: "League Spartan", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #070724;
+    background-color: white;
+    padding: 0.7rem 1.5rem;
+    border: 1.5px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #070724;
+    border-radius: 5px 15px 5px 5px;
+    color: white;
+}
+
+.head {
+    width: 100%;
+    font-family: "Antonio", serif;
+    border-bottom: 1px solid white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.4rem;
+    max-width: 1300px;
+    margin-inline: auto;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    font-family: "League Spartan", serif;
+}
+
+.links li a {
+    color: white;
+    text-decoration-line: none;
+}
+
+.links li {
+    text-transform: uppercase;
+    list-style: none;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.links li::before {
+    content: "";
+    position: absolute;
+    background-color: var(--before-color);
+    height: 5px;
+    top: -33px;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+.links li.selected::before, .upper-options div.selected::before {
+    width: 100%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo h1 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.base-planet {
+    width: 100%;
+}
+
+.planet-info {
+    width: 100%;
+    max-width: 1400px;
+    padding-inline: 1rem;
+    margin-top: 5rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.upper {
+    display: flex;
+    width: 100%;
+    gap: 5rem;
+}
+
+.main-data {
+    font-family: "League Spartan", serif;
+    width: 40%;
+}
+
+.side-img {
+    width: 60%;
+    text-align: center;
+    align-self: center;
+    position: relative;
+}
+
+.side-img img {
+    max-width: 520px;
+}
+
+.geo {
+    position: absolute;
+    width: 150px;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.base-info h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-family: "Antonio", serif;
+    margin-bottom: 1rem;
+}
+
+.base-info p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgb(153, 144, 144);
+    line-height: 34px;
+}
+
+.source {
+    margin-block: 2.4rem;
+    font-size: 1.05rem;
+}
+
+.source a {
+    color: rgb(153, 144, 144);
+}
+
+.sec {
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 0.9rem 0 0.9rem 2.5rem ;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.option-selected {
+    background-color: var(--before-color) !important;
+    border-color: var(--before-color) !important;
+}
+
+.sec:hover {
+    border-color: #38384f;
+    background-color: #38384f;
+}
+
+.sec + .sec {
+    margin-top: 1.5rem;
+}
+
+.lower {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-block: 4rem;
+}
+
+.base-view {
+    flex: 1;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.base-view p {
+    text-transform: uppercase;
+    font-family: "League Spartan", serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: rgb(171, 166, 166);
+}
+
+.base-view h1 {
+    font-size: 2.8rem;
+    font-weight: 400;
+}
+
+.upper-options {
+    display: none;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-family: "League Spartan", serif;
+    font-size: 0.95rem;
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+.upper-options div {
+    position: relative;
+}
+
+.upper-options div::before {
+    content: "";
+    height: 4px;
+    width: 0;
+    background-color: var(--before-color);
+    position: absolute;
+    top: 27px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1030px) {
+    header {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .links li::before {
+        top: 27px;
+    }
+
+    .upper {
+        flex-direction: column;
+    }
+
+    .side-img {
+        width: 100%;
+
+    }
+
+    .main-data {
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .source {
+        margin-block: 2rem 0;
+    }
+
+    .sec {
+        margin-top: 1rem;
+    }
+
+    .front {
+        width: 60%;
+    }
+
+    .diff-sec {
+        width: 40%;
+    }
+
+    .base-view h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.menu-links {
+    font-family: "League Spartan", serif;
+    text-transform: uppercase;
+    position:fixed;
+    background-color: #2a2a4b;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+}
+
+.menu-clicked {
+    transform: translateY(0);
+}
+
+.li-links {
+    padding: 5rem 2rem;
+}
+
+.li-links li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.pl {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--before-color);
+    position: relative;
+    bottom: 2px;
+}
+
+.li-links li a {
+    color: white;
+    text-decoration-line: none;
+}
+
+.li-links li + li {
+    margin-top: 1.4rem;
+}
+
+.menu-links i {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 830px) {
+    .upper {
+        gap: 2rem;
+    }
+
+    .upper-options {
+        display: flex;
+    }
+
+    .diff-sec {
+        display: none;
+    }
+
+    .front {
+        text-align: center;
+        width: 100%;
+    }
+
+    .lower {
+        flex-direction: column;
+    }
+
+    .base-view {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .base-view p {
+        margin: 0;
+    }
+
+    header {
+        flex-direction: row;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .side-img {
+        transform: scale(0.8);
+    }
+
+    .planet-info {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .side-img img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .base-modal h1 {
+        font-size: 4rem;
+    }
+
+    .base-modal h2 {
+        font-size: 1.2rem;
+    }
+
+    .base-info h1 {
+        font-size: 3rem;
+    }
+
+    .base-info p {
+        font-size: 0.95rem;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .side-img img {
+        max-width: 270px;
+    }
+
+    .base-view p {
+        font-size: 0.8rem;
+    }
+
+    .base-view h1 {
+        font-size: 1.3rem;
+    }
+}
